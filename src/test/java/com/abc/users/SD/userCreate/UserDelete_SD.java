@@ -16,12 +16,10 @@ import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
-public class UserCreate_SD {
-	
-	
-	Response res ;
+public class UserDelete_SD {
 	
 	PropertiesOperation prop = new PropertiesOperation();
+	Response res ;
 	
 	@Given("Hit create user API")
 	public void hit_create_user_api() throws IOException {
@@ -36,7 +34,7 @@ public class UserCreate_SD {
 						+ "    \"location\": \"Pune\"\r\n"
 						+ "}\r\n"
 						+ "")
-				.post(prop.getPropValue("APIURL_QA"));
+				.post(prop.getPropValue(""));
 	}
 	@Then("create new user in system")
 	public void create_new_user_in_system() {
@@ -72,7 +70,7 @@ public class UserCreate_SD {
 				.given()
 				.accept(ContentType.JSON)
 				.body(modifiedJsonString)
-				.post(prop.getPropValue("APIURL_QA")););
+				.post(postUrl);
 		
 	}
 
