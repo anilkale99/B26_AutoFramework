@@ -8,6 +8,11 @@ public class JsonUtilityTest {
 		String updatedJSON = JsonUtility.addNewAttributeToJson(filePath, "status", "active"); 
 		System.out.println("Modified JSON with new attribute" + updatedJSON );
 		
+		System.out.println("****************");
+		
+		updatedJSON = JsonUtility.deleteAttributeFromJson(filePath, "department"); 
+		System.out.println("Modified JSON with new attribute" + updatedJSON );
+		
 	}
 
 }

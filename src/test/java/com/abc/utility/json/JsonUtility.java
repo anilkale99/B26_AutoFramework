@@ -28,7 +28,22 @@ public class JsonUtility {
 		
 	}
 	
-	public static void  deleteAttributeFromJson() {
+	public static String deleteAttributeFromJson(String pathOfJsonFile, String attributeToDelete) {
+		
+		try {
+			String jsonContent = new String(Files.readAllBytes(Paths.get(pathOfJsonFile)));
+			
+			JSONObject jsonObject = new JSONObject(jsonContent);
+			
+			jsonObject.remove(attributeToDelete);
+			
+			return jsonObject.toString(2);
+		
+		} catch (Exception e) {
+		
+			e.printStackTrace();
+			return null;
+		}
 		
 	}
 
