@@ -6,7 +6,7 @@ public class ExcelReadUtilityTest {
 
 	public static void main(String[] args) {
 		
-		String filePath = "src/test/java/com/abc/utility/SampleExcelData.xlsx";
+		String filePath = "src/test/java/com/abc/utility/excel/SampleExcelData.xlsx";
 		
 		List<Employee> employeeList = ExcelReadUtility.readEmployeeData(filePath);
 		
